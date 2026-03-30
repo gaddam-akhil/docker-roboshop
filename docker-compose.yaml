@@ -1,0 +1,21 @@
+services:
+  catalogue:
+      build:
+        dockerfile: catalogue.Dockerfile
+      image: gaddamakhil/catalogue:1.0.0  
+      container_name: catalogue
+      depends_on:
+      - mongodb
+  mongodb:
+    build:    
+      dockerfile: mongodb.Dockerfile
+    image: gaddamakhil/mongodb:1.0.0
+    container_name: mongodb
+
+networks:
+  default:
+     # Use a custom driver
+    driver: bridge
+    name: roboshop
+    external: false #if true,you need to create metworl manually
+ 
