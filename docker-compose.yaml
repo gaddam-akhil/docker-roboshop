@@ -65,7 +65,7 @@ services:
     build: ./mysql
     image: gaddamakhil/mysql:1.0.0
     container_name: mysql
-  rabbimq:
+  rabbitmq:
     image: rabbitmq:3
     environment:
        RABBITMQ_DEFAULT_USER: roboshop \
