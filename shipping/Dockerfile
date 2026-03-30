@@ -1,11 +1,12 @@
 FROM maven:3.5 
+EXPOSE 8080
 WORKDIR /app
-COPY src /app/src
-COPY pom.xml /app
+COPY src ./src
+COPY pom.xml .
 RUN mvn clean package
+RUN mv target/shipping-1.0.jar shipping.jar
 ENV  CART_ENDPOINT=cart:8080 \
-     DB_HOST=mysql
-FROM mysql     
-CMD ["java","-jar","target/shipping-1.0.jar"]     
+     DB_HOST=mysql     
+CMD ["java","-jar","shipping.jar"]     
 
     
