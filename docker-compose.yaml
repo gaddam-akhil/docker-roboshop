@@ -5,10 +5,35 @@ services:
       container_name: catalogue
       depends_on:
       - mongodb
+  user:
+    build: ./user
+    image: gaddamakhil/user:1.0.0
+    container_name: user
+    depends_on:
+    - reids   
+    - mongodb
+  cart:
+    build: ./cart
+    image: gaddamakhil/cart:1.0.0
+    container_name: cart
+    depends_on:   
+    - redis
+    - catalogue
+  frontend:
+    build: ./frontend
+    image: gaddamakhil/frontend:1.0.0
+    container_name: frontend
+    depends_on:
+    - catalogue
+    - user
+    - cart  
   mongodb:
     build: ./mongodb  
     image: gaddamakhil/mongodb:1.0.0
     container_name: mongodb
+  redis:
+   image: redis:7.0
+   container_name: redis  
 
 networks:
   default:
