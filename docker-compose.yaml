@@ -10,7 +10,7 @@ services:
     image: gaddamakhil/user:1.0.0
     container_name: user
     depends_on:
-    - reids   
+    - redis   
     - mongodb
   cart:
     build: ./cart
