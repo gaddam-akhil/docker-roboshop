@@ -1,6 +1,5 @@
 FROM maven:3.5 
 WORKDIR /app
-COPY db /app/db
 COPY src /app/src
 COPY pom.xml /app
 RUN mvn clean package
