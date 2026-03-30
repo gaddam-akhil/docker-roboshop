@@ -55,8 +55,8 @@ services:
     - shipping
     - payment
   mongodb:
-    build: ./mongodb  
-    image: gaddamakhil/mongodb:1.0.0
+    build: ./mongodb  # it moves to mongodb directory
+    image: gaddamakhil/mongodb:1.0.0 # docker build -t joindevops/mongodb:1.0.0
     container_name: mongodb
   redis:
    image: redis:7.0
