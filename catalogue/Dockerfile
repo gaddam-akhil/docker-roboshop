@@ -13,8 +13,8 @@ ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 # Create a system group and user without a password
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
-USER roboshop
 RUN chown -R roboshop:roboshop /app
+USER roboshop
 CMD ["node" , "server.js"]
 
 
