@@ -8,7 +8,7 @@ RUN npm install
 FROM node:20.20.2-alpine3.23
 WORKDIR /app
 EXPOSE 8080
-COPY --from=builder /app .
+COPY --from=builder /app /app
 #this env is going to be handled in configmap in k8s
 #ENV MONGO="true" \
     #MONGO_URL="mongodb://mongodb:27017/catalogue"
