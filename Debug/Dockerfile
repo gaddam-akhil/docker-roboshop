@@ -1,6 +1,6 @@
 FROM almalinux:9
 RUN dnf install telnet iputils net-tools bind-utils -y
-CMD ["sleep","2500"]
+CMD ["sleep","3000"]
 
 # networking utilities: to debug
 # telnet: For testing connectivity to specific ports.
